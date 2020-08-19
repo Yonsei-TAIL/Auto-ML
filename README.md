@@ -1,5 +1,7 @@
 # Auto-ML for Radiomics Analysis
 
+![Example](ex/automl_run_ex.gif)
+
 ## Getting Started
 This repository provides everything necessary to train and evaluate machine learning models on radiomics feature data.\
 Note that this code may have a lot of things to be changed or developed. We welcome your feedback or append a new issue in this repo.
@@ -23,6 +25,7 @@ Note that this code may have a lot of things to be changed or developed. We welc
 - If you want to add another machine learning model, you have to do two steps.\
  i. Add machine learning model in ```model_initialization``` function on ```utils.core.py```\
  ii. Add corresponding hyper-parameter search grid in ```options/search_grid.py```
+
 
 ## To do list
 - [ ] Export training and validation result automatically
