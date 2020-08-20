@@ -11,7 +11,7 @@ Note that this code may have a lot of things to be changed or developed. We welc
 - Python pacakges : pandas, seaborn, scikit-learn (0.22), xgboost (0.90), lightgbm (2.3.1), imblearn, scipy (1.3.1)
 
 #### Structure
-- ```options/```: argument parser options
+- ```options/```: argument parser options and hyper-parameter search grid setting
 - ```utils/```: pre-processing, feature selection, performance calculation, and core (training and evaluation) codes
 - ```main.py/```: code for model training and evaluation
 
