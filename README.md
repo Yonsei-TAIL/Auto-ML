@@ -6,6 +6,14 @@
 This repository provides everything necessary to train and evaluate machine learning models on radiomics feature data.\
 Note that this code may have a lot of things to be changed or developed. We welcome your feedback or append a new issue in this repo.
 
+#### Steps
+1. Pre-processing : Z-score normalization, Remove NaN values
+2. Feature Selection : Lasso, F-score, Mutual information methods
+3. Over-sampling : SMOTE, ROSE
+5. Machine learning models : KNN, SVM, Random Forest, Extra Trees, LightGBM, XGBoost
+6. Hyper-parameter tuning : Randomim search with Cross Validation
+7. Evaluation metrics : AUC (95% CI), Accuracy, Sensitivty, Specificity, Confusion matrix, Calibration curve
+
 #### Requirements (pip install -r requirements.txt)
 - Python 3 (code has been tested on Python 3.7.5)
 - Python pacakges : pandas, seaborn, scikit-learn (0.22), xgboost (0.90), lightgbm (2.3.1), imblearn, scipy (1.3.1)
