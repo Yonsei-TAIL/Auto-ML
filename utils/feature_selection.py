@@ -23,7 +23,7 @@ def LassoSelection(train_df, valid_df, opt):
     valid_df_lasso = valid_df[[opt.label_col]+selected_feats]
 
     # Save selected features list as excel file
-    file_name = os.path.join(opt.exp, 'Lasso_Selected_Features.xlsx')
+    file_name = os.path.join(opt.exp, 'Lasso_selected_features.xlsx')
     pd.DataFrame(selected_feats).to_excel(file_name, index=False, header=False)
 
     return train_df_lasso, valid_df_lasso
@@ -43,7 +43,7 @@ def FscoreSelection(train_df, valid_df, opt):
     valid_df_fscore = valid_df[[opt.label_col]+selected_feats]
 
     # Save selected features list as excel file
-    file_name = os.path.join(opt.exp, 'Fscore_Selected_Features.xlsx')
+    file_name = os.path.join(opt.exp, 'Fscore_selected_features.xlsx')
     pd.DataFrame(selected_feats).to_excel(file_name, index=False, header=False)
 
     return train_df_fscore, valid_df_fscore
@@ -63,7 +63,7 @@ def MISelection(train_df, valid_df, opt):
     valid_df_mi = valid_df[[opt.label_col]+selected_feats]
 
     # Save selected features list as excel file
-    file_name = os.path.join(opt.exp, 'MI_Selected_Features.xlsx')
+    file_name = os.path.join(opt.exp, 'MI_selected_features.xlsx')
     pd.DataFrame(selected_feats).to_excel(file_name, index=False, header=False)
 
     return train_df_mi, valid_df_mi

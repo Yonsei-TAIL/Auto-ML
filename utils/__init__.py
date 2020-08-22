@@ -24,7 +24,7 @@ def train_valid_split(data_df, opt):
     uniq_labels = data_df[opt.label_col].unique()
     
     train_data = pd.DataFrame()
-    test_data  = pd.DataFrame()
+    valid_data  = pd.DataFrame()
 
     for label in uniq_labels:
         df_w_uniq_label = data_df[data_df[opt.label_col] == label]
@@ -36,7 +36,12 @@ def train_valid_split(data_df, opt):
         df_uniq_test  = df_w_uniq_label.iloc[split_idx:].sort_index()
 
         train_data = pd.concat([train_data, df_uniq_train])
-        test_data  = pd.concat([test_data,  df_uniq_test ])
+        valid_data  = pd.concat([valid_data,  df_uniq_test ])
 
-    print("Dataset Split : %d Train - %d Valid (Ratio %s)" % (len(train_data), len(test_data), opt.train_valid_ratio))
-    return train_data, test_data
+    # Export split data to disk
+    train_data.to_csv(os.path.join(opt.exp, 'train_dataset.csv'))
+    valid_data.to_csv(os.path.join(opt.exp, 'valid_dataset.csv'))
+
+
+    print("Dataset Split : %d Train - %d Valid (Ratio %s)" % (len(train_data), len(valid_data), opt.train_valid_ratio))
+    return train_data, valid_data

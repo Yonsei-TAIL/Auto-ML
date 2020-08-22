@@ -86,6 +86,6 @@ def get_train_cv_performance_youdens(model, train_df, kf, opt):
     train_cv_result['Specificity'] = (spec_result / cv)
     train_cv_result['AUC_95CI_LOWER'] = (auc_mean - margin)
     train_cv_result['AUC_95CI_UPPER'] = (auc_mean + margin)
-    train_cv_result['RSD'] = (auc_std / auc_mean * 100.)
+    train_cv_result['RSD (AUC)'] = (auc_std / auc_mean * 100.)
 
     return train_cv_result

@@ -62,7 +62,7 @@ def model_fit(model, params, train_df, valid_df, model_name, opt):
     valid_y_pred = (valid_y_pred_prob > cutoff).astype(int)
     valid_auc, (valid_auc_95ci_lower, valid_auc_95ci_upper) = auc_ci(valid_y, valid_y_pred_prob, return_ci=True)
     valid_acc, valid_sens, valid_spec = get_performance(valid_y, valid_y_pred)
-
+    
     valid_result['AUC'] = valid_auc
     valid_result['Accuracy'] = valid_acc
     valid_result['Sensitivity'] = valid_sens

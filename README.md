@@ -12,7 +12,7 @@ Note that this code may have a lot of things to be changed or developed. We welc
 3. Over-sampling : SMOTE, ROSE
 5. Machine learning models : KNN, SVM, Random Forest, Extra Trees, LightGBM, XGBoost
 6. Hyper-parameter tuning : Randomim search with Cross Validation
-7. Evaluation metrics : AUC (95% CI), Accuracy, Sensitivty, Specificity, Confusion matrix, Calibration curve
+7. Evaluation metrics : AUC (95% CI), Accuracy, Sensitivty, Specificity
 
 #### Requirements (pip install -r requirements.txt)
 - Python 3 (code has been tested on Python 3.7.5)
@@ -28,6 +28,13 @@ Note that this code may have a lot of things to be changed or developed. We welc
 ```python main.py --data_path data.csv --label_col label_column_name --exclude_cols column_names_not_to_use```\
 (Check additional argument by calling ```python main.py -h```)
 
+#### Outputs
+- ```000_selected_features.xlsx``` : selected feature list using 000 method
+- ```train_dataset.csv``` and ```valid_dataset.csv``` : train-valid stratified sampling result
+- ```000_feature_selection/hyper-parameters.xlsx``` : random searching hyper-parameter list
+- ```000_feature_selection/train_dataset_performance.xlsx``` : performance on train dataset
+- ```000_feature_selection/valid_dataset_performance.xlsx``` : performance on validation dataset
+
 #### Additional options
 - If you want to control the hyper-parameter search space, change the dictionary values of ```options/search_grid.py```
 - If you want to add another machine learning model, you have to do two steps.\
@@ -36,6 +43,7 @@ Note that this code may have a lot of things to be changed or developed. We welc
 
 
 ## To do list
-- [ ] Export training and validation result automatically
+- [x] Export training and validation result automatically
+- [ ] Plot calibration curve automatically
 - [ ] Make possible to control train-valid split option for divided dataset
 - [ ] Code refactoring and modularization
